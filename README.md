@@ -7,17 +7,21 @@ The setup of the STM32 is below
 The code to read the thermistors has copied from
 https://fabacademy.org/2024/labs/skylab/students/tafia-sabila/assignments/W11-Input-Devices/w11-2-input-devices/
 with some modification.
+The thermistors are connected to the 3.3V input and to the analogue pin that will read the resistance. The analogue pin is also connected to ground through a 10K resistor.
+The programming was carried out using the Arduino IDE. I used StlinkV2 to program the STM32f103
 
 The setup of the ESP8266-01
 
 ![esp8266-01 uart to wifi](https://github.com/user-attachments/assets/2bcf2697-49ce-4968-a051-f05dd2c329cc)
 
-The programming was carried out using the Arduino IDE. I used StlinkV2 to program the STM32 and I setup a breadboard to manage the ESP8266-01 although it is probably easier to buy a programmer for it.
+ I setup a breadboard to program the ESP8266-01 although it is probably easier to buy a programmer for it.
+ An example of the setup is below.
+ https://www.allaboutcircuits.com/projects/breadboard-and-program-an-esp-01-circuit-with-the-arduino-ide/
 
 The ESP8266-01 has most of the web page info in css.h. This is included at the beggining of the program.
 
 The temperatures are read every 2 seconds on the STM32f103 and the transmitted to the ESP8266-01 using serial2. Serial2 is already setup in the arduino code to be PA2 and PA3.
-The ESP8266-01 cycles through a loop and checks the serial input on Serial. If data is avaialble it started to read the data. It is expecting a string of the form   #xyy.yyCRLF
+The ESP8266-01 cycles through a loop and checks the serial input on Serial. If data is avaialble it starts to read the data. It is expecting a string of the form   #xyy.yyCRLF
 where:
 
 hash (#) is the start of the string
