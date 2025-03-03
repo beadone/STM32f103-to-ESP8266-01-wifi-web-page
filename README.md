@@ -1,6 +1,6 @@
 # STM32f103-to-ESP8266-01-wifi-web-page
 Demo Arduino code to get NTC 10k analogue readings on a STM32f103 to a web page using a ESP8266-01.
-I needed see 4 analogue readings on a local webpage. The ESP8266-01 does not have enough analogue pins for this prpose but it still can provide a simple webpage on your local wifi. I added an spare STM32f103 that I had which has more than enough analogue pins.
+I needed see 4 analogue readings on a local webpage. The ESP8266-01 does not have enough analogue pins for this purpose but it still can provide a simple webpage on your local wifi. I added an spare STM32f103 that I had which has more than enough analogue pins.
 All the pieces are very cheap.
 
 The setup of the STM32 is below
