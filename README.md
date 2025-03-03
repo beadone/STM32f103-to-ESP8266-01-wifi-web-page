@@ -26,13 +26,14 @@ CRLF is the end of the string (carriage return Line feed 1310)
 
 The loop will check for noise or an empty buffer at each step as there are timing issues between the send and receive. 
 There is a 1 second delay at the top of the loop to slow down the reads.
-
-_      // now looking for a sensor number but there is noise or a timiong issue on the feed.
+'''
+     // now looking for a sensor number but there is noise or a timiong issue on the feed.
       while (!(inByte ==  49 || inByte ==  50 || inByte ==  51 || inByte ==  52)) {  
           //getting noise, maybe timing as uart speed is 9600   
         Serial1.print(inByte);
         Serial1.print(", noise , ");
-        delay(1000);   // fix the timing_
+        delay(1000);   // fix the timing
+'''        
 The Arduino board library for ESP8266-01 sets up Serial1 on the GPIO2 pin. This is used for debug.
 
 If you want to set this up on a breadboard and see all the debug messages, you will need 3 USB to TTL converts. One each for the STM32f103 and ESP8266-01 debug messages and one to program the ESP8266-01.
